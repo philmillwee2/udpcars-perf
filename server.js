@@ -14,7 +14,11 @@ listener.start(function(err) {
 
 listener.setEvent("message", function(clientMsg) {
   let timestamp = (new Date()).toISOString();
-  console.log(timestamp, clientMsg);
+  queue.push({
+    timestamp: timestamp,
+    buffer: clientMsg
+  });
+  console.log(queue.length, timestamp, clientMsg);
 });
 
 console.log("Server shutdown successfully.");
