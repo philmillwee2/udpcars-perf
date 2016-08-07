@@ -1,0 +1,17 @@
+{
+  "name": "udpcars-perf",
+  "author": "Phillip Millwee II",
+  "version": "0.0.0",
+  "description": "UDP API performance monitor for Project Cars",
+  "main": "server.js",
+  "scripts": {
+    "lint": "eslint --fix .",
+    "test": "npm run lint && npm run test-src",
+    "test-src": "mocha --recursive src/test"
+  },
+  "dependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^2.13.1",
+    "mocha": "^2.5.3"
+  }
+}
