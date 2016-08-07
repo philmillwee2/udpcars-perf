@@ -2,6 +2,8 @@
 
 const listener = require("./src/lib/listener");
 
+let queue = [];
+
 listener.start(function(err) {
   if (err) {
     console.log(err);
@@ -11,7 +13,8 @@ listener.start(function(err) {
 });
 
 listener.setEvent("message", function(clientMsg) {
-  console.log(clientMsg);
+  let timestamp = (new Date()).toISOString();
+  console.log(timestamp, clientMsg);
 });
 
 console.log("Server shutdown successfully.");
